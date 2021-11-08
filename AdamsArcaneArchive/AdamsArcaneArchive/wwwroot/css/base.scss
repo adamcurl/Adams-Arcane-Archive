@@ -1,0 +1,73 @@
+﻿.sh-help-wrap {
+    position: fixed;
+    z-index: 1030;
+    left: 1em;
+    right: auto;
+    bottom: 1em;
+    opacity: 0.5;
+    transition: ease-in-out 0.5s;
+
+    span {
+        color: var(--med-gray);
+        margin-right: .25rem;
+        opacity: 0;
+        transition: ease-in-out 0.3s;
+    }
+
+    .btn-help {
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        user-select: none;
+        border: 1px solid transparent;
+        transition: ease-in-out 0.3s;
+        text-decoration: none;
+        border-radius: 50%;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 16px;
+        padding: 0.5em;
+        color: var(--light-gray);
+        background-color: var(--teal);
+        border-color: var(--teal);
+
+        svg {
+            path {
+                fill: var(--light-gray);
+            }
+        }
+
+        &:hover {
+            background-color: var(--yellow);
+            border-color: var(--yellow);
+            color: var(--charcoal);
+
+            svg {
+                path {
+                    fill: var(--charcoal);
+                }
+            }
+        }
+    }
+
+    &:hover {
+        opacity: 1;
+
+        span {
+            opacity: 1;
+        }
+    }
+}
+
+.maintenance {
+    text-align: center;
+
+    h1 {
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+    }
+
+    img {
+        width: 30em;
+    }
+}

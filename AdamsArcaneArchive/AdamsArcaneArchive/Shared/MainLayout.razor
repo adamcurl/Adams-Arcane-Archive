@@ -1,0 +1,66 @@
+﻿@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@using Microsoft.Extensions.Configuration;
+
+@if (!Maintenance)
+{
+    <div class="page">
+        <div class="sidebar">
+            <NavMenu />
+        </div>
+
+        <div class="main">
+            <div class="top-row px-4 auth">
+                <LoginDisplay />
+            </div>
+
+            <div class="content px-4">
+                @Body
+            </div>
+        </div>
+        <div class="sh-help-wrap">
+            <a href="https://sodiumhalogen.typeform.com/c/XH5gJZPw#url=@NavigationManager.Uri&projectname=[$safeprojectname$]%20-%20NEW%20ISSUE"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn-help">
+                <i class="fa-lg fal fa-life-ring" />
+            </a>
+            <span>Need help?</span>
+        </div>
+    </div>
+}
+else
+{
+    <div class="content px-4">
+        @Body
+    </div>
+}
+
+@code {
+    [Inject]
+    IConfiguration Configuration { get; set; }
+
+    private bool Maintenance = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var isAdmin = false;
+        var maintenanceMode = Configuration.GetValue<bool>("MaintenanceMode");
+        var uri = NavigationManager.Uri;
+
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        isAdmin = authState.User.IsInRole("Administrator");
+
+        if (maintenanceMode && !uri.Contains("maintenance") && !isAdmin)
+        {
+            NavigationManager.NavigateTo("/maintenance");
+        }
+
+        if (uri.Contains("maintenance"))
+        {
+            Maintenance = true;
+        }
+        base.OnInitialized();
+    }
+}

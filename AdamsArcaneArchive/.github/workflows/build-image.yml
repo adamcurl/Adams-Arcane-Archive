@@ -1,0 +1,27 @@
+name: Build/Push Backend Docker Image
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "AdamsArcaneArchive/**"
+  pull_request:
+    branches: [main]
+    paths:
+      - "AdamsArcaneArchive/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' # Running this job only for main branch
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build the Docker image
+        uses: whoan/docker-build-with-cache-action@v5
+        with:
+          username: adamcurl
+          password: ${{ secrets.GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages
+          registry: docker.pkg.github.com
+          image_name: adamsarcanearchive-app # Provide only Docker image name, tag will be automatically set to latest
+          dockerfile: Dockerfile
+          context: ./AdamsArcaneArchive

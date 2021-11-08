@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdamsArcaneArchive", "AdamsArcaneArchive\AdamsArcaneArchive.csproj", "{978315E6-ABE4-4E5E-BE76-14E611BED417}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{978315E6-ABE4-4E5E-BE76-14E611BED417}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{978315E6-ABE4-4E5E-BE76-14E611BED417}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{978315E6-ABE4-4E5E-BE76-14E611BED417}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{978315E6-ABE4-4E5E-BE76-14E611BED417}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BA9F07F9-1585-4692-9125-F26B7862FA74}
+	EndGlobalSection
+EndGlobal

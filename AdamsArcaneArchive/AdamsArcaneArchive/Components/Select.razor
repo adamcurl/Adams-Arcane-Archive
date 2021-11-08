@@ -1,0 +1,52 @@
+﻿@typeparam T
+
+<div class="select-dropdown-wrap">
+    <input type="text" @bind="@InitialValue" @oninput="@FilterItems" @onfocus="@OpenDropdown" @onblur="@CloseDropdown" />
+    <div class="@(!IsDropdownOpen ? "d-none" : "d-block") select-dropdown">
+        @foreach (var item in FilteredList)
+        {
+            <div>@DropdownItemTemplate(item)</div>
+        }
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public IReadOnlyList<T> InitialList { get; set; }
+
+    [Parameter]
+    public RenderFragment<T> DropdownItemTemplate { get; set; }
+
+    [Parameter]
+    public List<string> FilterProperties { get; set; }
+
+    [Parameter]
+    public string InitialValue { get; set; }
+
+    private bool IsDropdownOpen = false;
+    private List<T> FilteredList = new List<T> { };
+
+    private void OpenDropdown()
+    {
+        IsDropdownOpen = true;
+    }
+
+    private void CloseDropdown()
+    {
+        IsDropdownOpen = false;
+    }
+
+    private void FilterItems(ChangeEventArgs e)
+    {
+        FilteredList = InitialList.Where(x =>
+        {
+            var searchStr = "";
+            foreach (var property in FilterProperties)
+            {
+                searchStr += " ";
+                searchStr += typeof(T).GetProperty(property).GetValue(x).ToString().ToLower();
+            }
+            return searchStr.Contains(e.Value.ToString().ToLower());
+        }).ToList();
+    }
+}

@@ -1,0 +1,29 @@
+﻿@using Microsoft.Extensions.Logging
+@inject ILogger<Error> Logger
+@using Serilog;
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NavigationManager
+
+<CascadingValue Value=this>
+    @ChildContent
+</CascadingValue>
+
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    private string UserName = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        UserName = authState.User.Identity.Name;
+    }
+
+    public void ProcessError(Exception ex)
+    {
+        var uri = NavigationManager.Uri;
+        Log.Error("Error - Type: {Type} Message: {Message} User: {UserName} URI: {Uri} Stack Trace: {StackTrace}",
+        ex.GetType(), ex.Message, UserName, uri, ex.StackTrace);
+    }
+}
