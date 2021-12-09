@@ -1,0 +1,178 @@
+﻿@page "/homebrew-rules"
+
+<div>
+    <h2>Homebrew Rules</h2>
+
+    <div>
+        <h4>Combat</h4>
+
+        <h5>Cleaving</h5>
+        <p>When a melee attack reduces an undamaged creature to 0 hit points, any excess damage from that attack might carry over to another creature nearby. The attacker targets another creature within reach and, if the original attack roll can hit it, applies any remaining damage to it. You may repeat this process if the second creature is reduced to 0. Carryover the remaining damage to the next one.</p>
+
+        <h5>Climbing onto a creature</h5>
+        <p>A player can use an action to make an Athletics or Acrobatics check contested by the creature's Acrobatics check to climb onto a larger creature. The smaller creature moves with the larger creature, and the larger creature can use an action (or other situations) to shake the smaller creature off by using Athletics contested by the smaller creature's Athletics or Acrobatics.</p>
+        <p>The smaller creature has advantage on attacks against the larger creature but makes any Dexterity or Strength saving throws from the larger creature at disadvantage. The smaller creature treats the larger creature's body as difficult terrain and must have at least one free hand to stay latched on.</p>
+       
+        <h5>Critical Hits</h5>
+        <p>When you get a critical hit, double the value of all damage dice rolled.</p>
+
+        <h5>Flanking</h5>
+        <p>Flanking only works if the creature being flanked is at max 1 size larger than the creatures flanking.</p>
+
+        <h5>Lingering Injuries</h5>
+        <p>A creature might incur a lingering injury from the following situations:</p>
+        <ul>
+            <li>Take more than half your hit points in damage from a single source of damage.</li>
+            <li>When it drops to 0 hit points, but isn't killed outright.</li>
+            <li>When it fails a death saving throw by 5 or more.</li>
+        </ul>
+        <p>Linger Injuries:</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>d20</th>
+                    <th>Injury</th>
+                    <th>Effect</th>
+                    <th>Cure</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Lose an Eye</td>
+                    <td>Disadvantage on Perception checks and ranged attacks.</td>
+                    <td>Regenerate spell or Ersatz Eye magic item (no attunement required).</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Lose an Arm or Hand</td>
+                    <td>You can no longer hold anything with two hands and can only hold one object at a time.</td>
+                    <td>Regenerate spell or Prosthetic Limb magic item.</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Lose a Foot or Leg</td>
+                    <td>Your speed on foot is halved and fall prone after using the Dash action. You have disadvantage on Dexterity checks to maintain balance.</td>
+                    <td>Regenerate spell or Prosthetic Limb magic item.</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Limp</td>
+                    <td>Your speed on foot is reduced by 5 feet. You must make a DC 10 Dexterity saving throw after using the Dash action, falling prone on a failure.</td>
+                    <td>Magical healing.</td>
+                </tr>
+                <tr>
+                    <td>5-10</td>
+                    <td>Internal Injury</td>
+                    <td>You must make a DC 12 Constitution saving throw when you attempt an action in combat. On a failed save, you lose your action.</td>
+                    <td>Magical healing or 10 days of rest.</td>
+                </tr>
+                <tr>
+                    <td>11-13</td>
+                    <td>Horrible Scar</td>
+                    <td>You have disadvantage on Persuassion checks and advantage on Intimidation checks.</td>
+                    <td>Magical healing.</td>
+                </tr>
+                <tr>
+                    <td>14-16</td>
+                    <td>Festering Wound</td>
+                    <td>Your hit point maximum is reduced by 1 every 24 hours while the wound persists. If your hit point maximum drops to 0, you die.</td>
+                    <td>Magical healing or someone tends to the wound once per day with a successful DC 15 Medicine check for 10 days.</td>
+                </tr>
+                <tr>
+                    <td>17-20</td>
+                    <td>Minor Scar</td>
+                    <td>No adverse effect.</td>
+                    <td>Magical healing.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h5>Potions</h5>
+        <p>Drunking a potion is a bonus action, but administering a potion to another creature takes an action.</p>
+    </div>
+
+    <div>
+        <h4>Leveling Up</h4>
+        <h5>Hit Points</h5>
+        <p>When you level up and roll your hit die to increase your hit point maximum, you reroll it if it is a 1. All hit die rolls are to be made at the table after I say you gain a level.</p>
+    </div>
+
+    <div>
+        <h4>Resurrection</h4>
+        <p>For resurrection spells that take longer than an action to cast, the DM will roll a resurrection check (DC 10). Up to 3 players may contribute to a skill check to bring the character back to life. For each successful skill check, the DC decreases by 3. For each failed skill check, the DC increases by 1. Each time a character is brought back to life, the resurrection DC permanently increases by 1, making it harder to constantly revive players.</p>
+    </div>
+
+    <div>
+        <h4>Social</h4>
+        <h5>Intimidation</h5>
+        <p>Intimidation checks can use either Charisma or Strength depending on the situation.</p>
+    </div>
+
+    <div>
+        <h4>Wild Shape</h4>
+        <h5>Magic Items</h5>
+        <p>Since magic items adjust themselves to fit the wearer, it is possible for a wild-shaped druid to still wear and benefit from the magic item. However, there are limitations based on the size and shape of the beast:</p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Type of Magic Item</th>
+                    <th>Compatability*</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Amulets/Brooches/Necklaces/Periapts</td>
+                    <td>Biped, Quadruped, Avian, or any beast with a neck</td>
+                </tr>
+                <tr>
+                    <td>Armor</td>
+                    <td>Biped with shoulders and a waistline</td>
+                </tr>
+                <tr>
+                    <td>Belts</td>
+                    <td>Biped with a waistline</td>
+                </tr>
+                <tr>
+                    <td>Boots/Shoes</td>
+                    <td>Biped with clawed or toed feet</td>
+                </tr>
+                <tr>
+                    <td>Cloaks/Mantles/Robes</td>
+                    <td>Biped, Quadruped, Avian with shoulders and/or neck</td>
+                </tr>
+                <tr>
+                    <td>Gauntlets/Gloves</td>
+                    <td>Biped, Quadruped (clawed), or any beast with appropriate phalanges</td>
+                </tr>
+                <tr>
+                    <td>Glasses/Goggles/Lenses</td>
+                    <td>Any beast with eyes and an appropriately shaped head</td>
+                </tr>
+                <tr>
+                    <td>Hats</td>
+                    <td>All beasts with an appropriately shaped head</td>
+                </tr>
+                <tr>
+                    <td>Helms</td>
+                    <td>Any beast with a feasible head shape</td>
+                </tr>
+                <tr>
+                    <td>Rings</td>
+                    <td>Biped, Quadruped (clawed), Tentacled</td>
+                </tr>
+                <tr>
+                    <td>Rods/Shields/Staffs/Wands/Weapons</td>
+                    <td>Any bipedal creature with opposable thumbs</td>
+                </tr>
+                <tr>
+                    <td>Tattoos</td>
+                    <td>Any endoskeleton creature with skin</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>*All creatures are assumed to be of Tiny - Large size</p>
+
+    </div>
+</div>
