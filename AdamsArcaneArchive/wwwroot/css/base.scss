@@ -157,3 +157,30 @@ table {
         margin-bottom: 3rem;
     }
 }
+
+.table-wrapper {
+    display: block;
+    overflow-x: auto;
+    overflow-y: visible;
+    max-width: 100%;
+
+    &::-webkit-scrollbar {
+        height: 1.2em;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #FFFFFF;
+        border: 2px solid #E5E5E5;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #c4c4c4;
+        border-radius: 10px;
+        background-clip: content-box;
+
+        &:hover {
+            background-color: #E5E5E5;
+        }
+    }
+}
